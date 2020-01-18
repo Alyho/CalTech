@@ -14,7 +14,7 @@ class coin_environment:
        self.prob_heads = [0.9, 0.5, 0.7]
         
     def flip(self, coin_number):
-        random_number = np.random.randint(0,2)
+        random_number = np.random.choice([0,1], p=[1-self.prob_heads[coin_number-1], self.prob_heads[coin_number-1]])
         
         if random_number == 0:
             return "heads"
